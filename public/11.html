@@ -1,0 +1,32 @@
+<html>
+
+<body>
+
+  <input type="file"  id="file" style="display: none;">
+      <input type="text" style="width:200px;height:35px;border: solid 1px #c3ab7d;"  id="personalpicture" name="personalpicture" readonly>
+      <input id="choice" class="scbtn" type="button" value="选择图片" >
+    
+</body>
+<script src='./assets/jquery.js'></script>
+<script type="text/javascript">
+$(document).ready(function(){
+var file = "${teacherInfo.personalpicture}";
+        var index = file.lastIndexOf("_")+1; 
+    $("#personalpicture").val(file.substring(index));
+});
+$("#choice").click(function(){
+$("#file").click();
+})
+
+$("#file").change(function(){
+            var file = $("#file").val();
+            var index = file.lastIndexOf("\\")+1;
+      $("#personalpicture").val(file.substring(index));
+       })
+</script>
+</html>
+<!-- --------------------- 
+作者：兰星铄 
+来源：CSDN 
+原文：https://blog.csdn.net/zxj774843784/article/details/73549414 
+版权声明：本文为博主原创文章，转载请附上博文链接！ -->
